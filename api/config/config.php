@@ -1,34 +1,18 @@
+
 <?php
-class Database{
+/* Database credentials. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'todolist');
  
-    // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "todolist";
-    private $username = "root";
-    private $password = "";
-    public $conn;
-
-
-    $array = $pdo->query("SELECT id, tasks, as start,url 
-    FROM todos")->fetchAll(PDO::FETCH_ASSOC);
-     echo json_encode($array);
- 
-    // get the database connection
-    public function getConnection(){
- 
-        $this->conn = null;
- 
-        try{
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-            $this->conn->exec("set names utf8");
-        }catch(PDOException $exception){
-            echo "Connection error: " . $exception->getMessage();
-        }
- 
-        return $this->conn;
-    
-    }
+/* Attempt to connect to MySQL database */
+try{
+    $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e){
+    die("ERROR: Could not connect. " . $e->getMessage());
 }
-
-
 ?>

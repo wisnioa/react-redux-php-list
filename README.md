@@ -16,5 +16,6 @@ As for my PHP and database code, I chose the PDO style because you can use it wi
 
 Unfortunately, this app is not fully functional, nor deployed. The learning curve for me was steep, and this week, time-wise, turned out to be tough with both of my jobs and getting ready to move into a new place. Being a Node JS diehard, this was interesting test for me and helped break open my mind about other backend development. Also, the little knowledge I had of PHP has greatly increased as well. 
 
+Any feedback that you could provide would be greatly appreciated!
 
 
